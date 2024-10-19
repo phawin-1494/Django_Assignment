@@ -2,7 +2,7 @@
     "builds": [{
         "src": "petanque_court/wsgi.py",
         "use": "@vercel/python",
-        "config": {"maxLambdasize": "15mb", "runtime": "python3.11.5" }
+        "config": {"maxLambdasize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {

@@ -29,32 +29,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0  fs-5">
                         <li class="nav-item">
-                            <a class="nav-link active cHover text-white" aria-current="page" href="{% url 'index' %}">Home</a>
+                            <a class="nav-link active cHover text-white" aria-current="page" href="{% url 'index' %}">หน้าเริ่มต้น</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active cHover text-white" href="#contact">Contact Us</a>
+                            <a class="nav-link active cHover text-white" href="#contact">ติดต่อเรา</a>
                         </li>     
                         <li class="nav-item">
-                            <a class="nav-link active cHover text-white" href="{% url 'booking' %}">Booking</a>
+                            <a class="nav-link active cHover text-white" href="{% url 'booking' %}">จองสนาม</a>
                         </li>                   
                         {% if user.is_authenticated %}
                         <!--Clinic Staff Link-->
                         <li class="nav-item">
-                            <a class="nav-link active cHover text-white" href="{% url 'staffPanel' %}">Booked Panel</a>
+                            <a class="nav-link active cHover text-white" href="{% url 'staffPanel' %}">ข้อมูลการจองสนาม</a>
                         </li> 
                         <li class="nav-item dropdown me-3 fs-5">
                             <a class="nav-link active dropdown-toggle cHover text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              User
+                              ผู้ใช้
                             </a>
                             <ul class="dropdown-menu  border zNav">
-                              <li><a class="dropdown-item text-black" href="{% url 'userPanel' %}">User Panel</a></li>
+                              <li><a class="dropdown-item text-black" href="{% url 'userPanel' %}">ข้อมูลผู้ใช้</a></li>
                               <li><hr class=""></li>
-                              <li><a class="dropdown-item text-black" href="{% url 'logout' %}">Sign Out</a></li>
+                              <li><a class="dropdown-item text-black" href="{% url 'logout' %}">ออกจากระบบ</a></li>
                             </ul>
                         </li>
                         {% else %}
                         <li class="nav-item me-3">
-                            <a class="nav-link active cHover text-white" href="{% url 'login' %}">Sign in</a>
+                            <a class="nav-link active cHover text-white" href="{% url 'login' %}">เข้าสู่ระบบ</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -85,7 +85,7 @@
         <div class="container-fluid pt-3">
             <div class="d-flex justify-content-center">
                 <h5 class="text-uppercase fw-bold textGradient" id="contact">
-                    Contact Us
+                    ติดต่อพวกเรา
                 </h5>
             </div>
             <section class="">
@@ -98,7 +98,7 @@
                         <!-- Links -->
                         <p>
                             <a><i class="bi bi-telephone"></i></a>
-                            <a href="Tel: 061 030 4272" class=""><span class="cBlue">Tel: 061 030 4272</span></a>
+                            <a href="Tel: 061 030 4272" class=""><span class="cBlue">เบอร์โทร: 061 030 4272</span></a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -108,7 +108,7 @@
                         <!-- Links -->
                         <p>
                             <a><i class="bi bi-facebook text-light"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=100055188583294" class=""><span class="cBlue">Facebook Page</span></a>
+                            <a href="https://www.facebook.com/profile.php?id=100055188583294" class=""><span class="cBlue">เพจ Facebook</span></a>
                         </p>
                     </div>
                     <!-- Service links Regular -->

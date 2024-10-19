@@ -5,13 +5,13 @@
 
 
 {% if user.is_authenticated %}
-<h1 class="p-2 text-center mb-5 text-warning">You Are Already Signed In</h1>
+<h1 class="p-2 text-center mb-5 text-warning">คุณได้เข้าสู่ระบบแล้ว</h1>
 
 {% else %}
 
   
 <div class="shadow pb-3 pt-4 mb-5 bg-body bg-body rounded text-black  m-5 fPersian">
-  <h1 class="p-3  me-3">Sign in</h1>
+  <h1 class="p-3  me-3">เข้าสู่ระบบ</h1>
   <div class="m-5">
     <form method="POST" action="" class="">
         {% csrf_token %}
@@ -23,10 +23,10 @@
               <label for="exampleInputPassword1" class="form-label fs-2">Password</label>
               <input type="password" class="form-control form-control-lg" placeholder="Password..." name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
             </br>
             <p></p>
-            <a href="{% url 'register' %}" class="form-label fs-5 mb-3 mt-6">Don't Have An Account?</label>
+            <a href="{% url 'register' %}" class="form-label fs-5 mb-3 mt-6">สร้างบัญชี</label>
             </br>
           </br>
     </form>

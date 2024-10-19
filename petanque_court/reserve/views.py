@@ -18,7 +18,7 @@ def booking(request):
         service = request.POST.get('service')
         day = request.POST.get('day')
         if service == None:
-            messages.success(request, "Please Select A Service!")
+            messages.success(request, "โปรดเลือกสนาม!")
             return redirect('booking')
 
         #Store day and service in django session:
@@ -68,16 +68,16 @@ def bookingSubmit(request):
                             day = day,
                             time = time,
                         )
-                        messages.success(request, "Reservation Saved!")
+                        messages.success(request, "จองสนามสำเร็จ!")
                         return redirect('index')
                     else:
-                        messages.success(request, "The Selected Time Has Been Reserved Before!")
+                        messages.success(request, "วันที่เลือกมีคนจองแล้ว!")
                 else:
-                    messages.success(request, "The Selected Day Is Full!")
+                    messages.success(request, "วันที่เลือกเต็มแล้ว!")
             else:
-                    messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
+                    messages.success(request, "วันที่เลือกอยู่ในเวลาที่ไม่ถูกต้อง!")
         else:
-            messages.success(request, "Please Select A Set Of Court!")
+            messages.success(request, "โปรดเลือกสนาม!")
 
 
     return render(request, 'bookingSubmit.html', {
@@ -162,16 +162,16 @@ def userUpdateSubmit(request, id):
                             day = day,
                             time = time,
                         ) 
-                        messages.success(request, "Reservation Edited!")
+                        messages.success(request, "แก้ข้อมูลการจองแล้ว!")
                         return redirect('index')
                     else:
-                        messages.success(request, "The Selected Time Has Been Reserved Before!")
+                        messages.success(request, "วันที่เลือกมีคนจองแล้ว!")
                 else:
-                    messages.success(request, "The Selected Day Is Full!")
+                    messages.success(request, "วันที่เลือกเต็มแล้ว!")
             else:
-                    messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
+                    messages.success(request, "วันที่เลือกอยู่ในเวลาที่ไม่ถูกต้อง!")
         else:
-            messages.success(request, "Please Select A Set Of Court!")
+            messages.success(request, "โปรดเลือกสนาม!")
         return redirect('userPanel')
 
 

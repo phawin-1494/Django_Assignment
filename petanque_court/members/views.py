@@ -17,14 +17,14 @@ def login_user(request):
         else:
             # Return an 'invalid login' error message.
             ...
-            messages.success(request, "There Was An Error!")
+            messages.success(request, "มีปัญหา!")
             return redirect('login')
     else:
         return render(request, 'authenticate/login.html', {})
 
 def logout_user(request):
     logout(request)
-    messages.success(request, "Sign Out Successful")
+    messages.success(request, "ออกจากระบบสำเร็จ")
     return redirect('index')
 
 def register_user(request):
@@ -36,7 +36,7 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password = password)
             login(request, user)
-            messages.success(request, "Sign Up Completed!")
+            messages.success(request, "เข้าสู่ระบบสำเร็จ!")
             return redirect('index')
     else:
         form = RegisterUserForm()
