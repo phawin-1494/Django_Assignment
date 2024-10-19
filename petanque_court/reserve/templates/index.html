@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+
+  <!--Hero 1 Start-->
+  <div class="container-fluid">
+    <div class="card">
+        <img class="card-img-top" src="/static/Petanque_cover.png" alt="Card image">
+        <div class="card-img-overlay">
+            <div class="row mt-5">
+                <div class="col-sm-12v text-center">
+                    <h1 class="display-4 text-white">
+                        <dt>Welcome to Mo Din Dang Petanque Club Site</dt>
+                    </h1>
+                    <h6 class="text-white">A Website for reserving the Petanque court</h6>
+                    <a type="button" class="btn btn-danger shadow  mt-5" href="{% url 'booking' %}">Online Booking</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+  <div class="d-flex justify-content-center">
+    <h1>News</h1>
+  </div>
+  <div class="container-fluid mt-5 bg-light">
+    <div class="row">
+        <div class="col-sm-6 mt-5 mb-5" >
+            <div class="d-flex justify-content-center">
+                <img src="/static/news1.jpg" class="img-thumbnail display: block; max-width: 100%; and height: auto;" alt="Cinque Terre">
+              </div>
+        </div>
+        <div class="col-sm-6 mt-5">
+            <dt class="h2">สรุปผลการแข่งขัน‼️ </dt>
+            <p>
+              กีฬาเปตองเฟรชชี่ระหว่างคณะ ประจำปี 2567 
+              Pétanque Freshy Games 2024
+              ระหว่างวันที่ 25-27 สิงหาคม 2567
+            </p>
+            <a href="https://www.facebook.com/share/p/d5qgrsM4qd4eMCRF/" class="btn btn-danger">Read More</a>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 bg-light">
+      <div class="row">
+          <div class="col-sm-6 mt-5 mb-5" >
+              <div class="d-flex justify-content-center">
+                  <img src="/static/news2.jpeg" class="img-thumbnail display: block; max-width: 100%; and height: auto;" alt="Cinque Terre">
+                </div>
+          </div>
+          <div class="col-sm-6 mt-5">
+              <dt class="h2">ประมวลภาพการแข่งขันเพื่อคัดเลือกกีฬามหาวิทยาลัยขอนแก่น </dt>
+              <p>
+                เพื่อเข้าร่วมการแข่งขันกีฬามหาวิทยาลัยแห่งประเทศไทย ครั้งที่ 50 ”ธรรมศาสตร์เกมส์”
+                ดำเนินการโดย 
+                กองการกีฬา มหาวิทยาลัยขอนแก่น
+                ชมรมกีฬาเปตองและเจ้าหน้าที่ทีมกีฬา
+                "วินัย คือ หัวใจของนักกีฬา"
+                "ขอขอบคุณทุกๆ คนที่มีส่วนร่วมในครั้งนี้"
+              </p>
+              <a href="https://www.facebook.com/share/p/QoG46RUYQG6qdu8W/" class="btn btn-danger">Read More</a>
+          </div>
+      </div>
+</div>
+</div>
+
+  <!--Hero 1 End-->
+
+{% endblock %}
