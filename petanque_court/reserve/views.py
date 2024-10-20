@@ -7,7 +7,8 @@ def index(request):
     return render(request, "index.html",{})
 
 def booking(request):
-    #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
+    #Calling 'validWeekday' Function to Loop days you want in the next specified days:
+    #In this case 7
     weekdays = validWeekday(7)
 
     #Only show the days that are not full:
@@ -95,7 +96,7 @@ def userPanel(request):
 def userUpdate(request, id):
     appointment = Appointment.objects.get(pk=id)
     userdatepicked = appointment.day
-    #Copy  booking:
+    #Copy prior booking:
     today = datetime.today()
     minDate = today.strftime('%Y-%m-%d')
 
@@ -180,16 +181,16 @@ def userUpdateSubmit(request, id):
         'id': id,
     })
 
-def staffPanel(request):
+def globalPanel(request):
     today = datetime.today()
     minDate = today.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=7)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
-    #Only show the Appointments 21 days from today
+    #Only show the Appointments 7 days from today
     items = Appointment.objects.filter(day__range=[minDate, maxDate]).order_by('day', 'time')
 
-    return render(request, 'staffPanel.html', {
+    return render(request, 'globalPanel.html', {
         'items':items,
     })
 
@@ -199,13 +200,12 @@ def dayToWeekday(x):
     return y
 
 def validWeekday(days):
-    #Loop days you want in the next 21 days:
+    #Loop days you want in the next specified days:
     today = datetime.now()
     weekdays = []
     for i in range (0, days):
         x = today + timedelta(days=i)
         y = x.strftime('%A')
-        #if y == 'Monday' or y == 'Saturday' or y == 'Wednesday':
         weekdays.append(x.strftime('%Y-%m-%d'))
     return weekdays
     

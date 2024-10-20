@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 
-SERVICE_CHOICES = (
+COURT_CHOICES = (
     ("Court 3,4", "Court 3,4"),
     ("Court 5,6", "Court 5,6"),
     ("Court 7,8", "Court 7,8"),
@@ -31,7 +31,7 @@ TIME_CHOICES = (
 
 class Appointment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    service = models.CharField(max_length=50, choices=SERVICE_CHOICES, default="Court 3,4")
+    service = models.CharField(max_length=50, choices=COURT_CHOICES, default="Court 3,4")
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=30, choices=TIME_CHOICES, default="16.00 - 17.00")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
