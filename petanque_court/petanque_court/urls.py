@@ -18,11 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from schema_graph.views import Schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('admin_tools_stats/', include('admin_tools_stats.urls')),
     path('', include("reserve.urls")),
     path('user', include("members.urls")),
+    path("schema/", Schema.as_view()),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

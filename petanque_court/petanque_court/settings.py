@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_tools_stats',  
+    'django_nvd3',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'reserve',
     'crispy_forms',
     'crispy_bootstrap5',
+    'schema_graph',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

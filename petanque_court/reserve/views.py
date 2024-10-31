@@ -16,7 +16,7 @@ def booking(request):
             save = form.save(commit=False)
             save.user = request.user
             if CourtBooking.objects.filter(courts=save.courts, day=save.day,time=save.time):
-                messages.error(request, "มีการจองแล้ว ลองใหม่")
+                messages.error(request, "มีการจองแล้ว กรุณาลองใหม่")
                 return redirect('booking')
             else:
                 save.save()
@@ -37,10 +37,10 @@ def userPanel(request):
 def globalPanel(request):
     today = datetime.today()
     minDate = today.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=7)
+    deltatime = today + timedelta(days=3)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
-    #Only show the Courtbooked 7 days from today
+    #Only show the Courtbooked 3 days from today
     items = CourtBooking.objects.filter(day__range=[minDate, maxDate]).order_by('day', 'time')
 
     return render(request, 'globalPanel.html', {
@@ -58,7 +58,7 @@ def userUpdate(request, id):
             save = form.save(commit=False)
             save.user = request.user
             if CourtBooking.objects.filter(courts=save.courts, day=save.day,time=save.time):
-                messages.error(request, "มีการจองแล้ว ลองใหม่")
+                messages.error(request, "มีการจองแล้ว กรุณาลองใหม่")
                 return redirect('booking')
             else:
                 #Update the existing booking
