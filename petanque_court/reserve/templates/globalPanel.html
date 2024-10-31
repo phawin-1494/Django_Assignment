@@ -1,5 +1,5 @@
 <title>Staff Panel</title>
-{% extends 'layout.html' %}
+{% extends 'layout_2.html' %}
 {% load static %}
 {% block body %}
 
@@ -18,19 +18,21 @@
           <thead>
             <tr>
               <th class="text-center" scope="col">เวลา</th>
+              <th class="text-center" scope="col">ชื่อผู้ใช้</th>
               <th class="text-center" scope="col">ชื่อ</th>
               <th class="text-center" scope="col">นามสกุล</th>
-              <th class="text-center" scope="col">สนาม</th>
-              <th class="text-center" scope="col">วัน</th>
+              <th class="text-center" scope="col">คู่สนาม</th>
+              <th class="text-center" scope="col">วันที่จองสนาม</th>
             </tr>
           </thead>
           <tbody id="myTable">
               {% for item in items %}
             <tr>
               <td class="text-center">{{item.time}}</td>
+              <td class="text-center">{{item.user}}</td>
               <td class="text-center">{{item.user.first_name}}</td>
               <td class="text-center">{{item.user.last_name}}</td>
-              <td class="text-center">{{item.service}}</td>
+              <td class="text-center">{{item.courts}}</td>
               <td class="text-center">{{item.day}}</td>
             </tr>
               {% endfor %}

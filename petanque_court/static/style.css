@@ -1,0 +1,49 @@
+/* กำหนดความสูงสูงสุดและ overflow สำหรับการเลื่อนแนวตั้ง */
+p {
+text-align: right;
+}
+.table-container {
+    max-height: 480px; /* ปรับตามความเหมาะสม */
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #A73B24;
+    z-index: 1;
+    color: white;
+}
+
+.reserved {
+    background-color: red;
+    color: white;
+}
+
+.available {
+    background-color: green;
+    color: white;
+}
+.data-picker{
+text-align: center;
+margin: 10px 0;
+}
+h2, .date-picker, .table-container {
+    text-align: center;
+    margin: 10px 0;
+}
+.form-select .fs-3  .service2{  
+    display: flex;
+}

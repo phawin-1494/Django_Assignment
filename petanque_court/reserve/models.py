@@ -29,10 +29,10 @@ TIME_CHOICES = (
     ("21.00 - 22.00", "21.00 - 22.00"),
 )
 
-class Appointment(models.Model):
+class CourtBooking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    service = models.CharField(max_length=50, choices=COURT_CHOICES, default="Court 3,4")
-    day = models.DateField(default=datetime.now)
+    courts = models.CharField(max_length=50, choices=COURT_CHOICES, default="Court 3,4")
+    day = models.DateTimeField(default=datetime.now)
     time = models.CharField(max_length=30, choices=TIME_CHOICES, default="16.00 - 17.00")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self):

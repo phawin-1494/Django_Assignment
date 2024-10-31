@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Appointment
+from .models import CourtBooking
 
 # Register your models here.
 class BookingList(admin.ModelAdmin):
-    list_display = ("user","service","day","time")
+    list_display = ("user","courts","day","time")
 
-admin.site.register(Appointment, BookingList)
+admin.site.register(CourtBooking, BookingList)

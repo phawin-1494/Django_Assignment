@@ -1,33 +1,40 @@
 <title>Sign Up</title>
-{% extends 'layout.html' %}
+{% extends 'layout_2.html' %}
 {% load static %}
 {% block body %}
 
-
-
 {% if user.is_authenticated %}
-<h1 class="p-2 text-center mb-5 text-warning">คุณเข้าสู่ระบบแล้ว!</h1>
+<h1 class="p-2 text-center mb-5 text-success">คุณเข้าสู่ระบบแล้ว!</h1>
 
 {% else %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4 bg-light rounded text-black">
+        <h2 class="text-center text-primary mb-4">สร้างบัญชี</h2>
+        <div class="card-body">
+          <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            
+            <!-- Render form fields dynamically -->
+            {{ form.as_p }}
 
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" class="btn btn-success btn-lg">สมัครสมาชิก</button>
+            </div>
 
-<div class="bg-white fPersian">
-<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5">
-    <h1 class="text-black p-3 ">สร้างบัญชี</h1>
-<form method="POST" action="{% url 'register' %}">
-    {% csrf_token %}
-
-       {{ form.as_p }}
-
-        <br/>
-        <button type="submit" class="btn btn-primary">ส่ง</button>
-        </br>
-        <label class="form-label fs-3 mt-5">มีบัญชีแล้ว?</label>
-        </br>
-        <a href="{% url 'login' %}" class="btn btn-primary">เข้าสู่ระบบ</a>
-</form>
-</div>
-<br/><br/><br/>
+            <div class="text-center mt-4">
+              <label class="form-label fs-5">มีบัญชีอยู่แล้ว?</label>
+              <p>
+                <a href="{% url 'login' %}" class="text-decoration-none fs-5">เข้าสู่ระบบ</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endif %}
+
 {% endblock %}
